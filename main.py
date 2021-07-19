@@ -6,7 +6,7 @@ from PIL import ImageDraw
 
 st.title('顔画像解析アプリ')
 
-subscription_key = '23e10c89452d4b5ca7cf7c1ce7f8b457'
+subscription_key = 'secret_key.json'
 assert subscription_key
 
 face_api_url = 'https://20210718echigawa.cognitiveservices.azure.com/face/v1.0/detect'
