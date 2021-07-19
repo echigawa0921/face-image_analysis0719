@@ -11,12 +11,12 @@ assert subscription_key
 
 face_api_url = 'https://20210718echigawa.cognitiveservices.azure.com/face/v1.0/detect'
 
-uploaded_file = st.file_uploader("Choose on image...", type="jpeg")
+uploaded_file = st.file_uploader("Choose on image...", type="jpg")
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     with io.BytesIO() as output:
-        img.save(output , format="JPEG")
+        img.save(output , format="JPG")
         bainary_img = output.getvalue()
         
         headers = {
