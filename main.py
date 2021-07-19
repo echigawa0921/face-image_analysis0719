@@ -11,13 +11,13 @@ assert subscription_key
 
 face_api_url = 'https://20210718echigawa.cognitiveservices.azure.com/face/v1.0/detect'
 
-uploaded_file = st.file_uploader("Choose on image...", type="jpg")
+uploaded_file = st.file_uploader("Choose on image...", type="jpeg")
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     with io.BytesIO() as output:
-        img.save(output , format="JPG")
-        bainary_img = output.getvalue()
+        img.save(output , format="JPEG")
+        binary_img = output.getvalue()
         
         headers = {
             'Content-Type': 'application/octet-stream',
@@ -28,7 +28,7 @@ if uploaded_file is not None:
             'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
         }
 
-        res = requests.post(face_api_url, params=params,headers=headers, data=bainary_img)
+        res = requests.post(face_api_url, params=params,headers=headers, data=binary_img)
 
         results = res.json()
         for result in results:
