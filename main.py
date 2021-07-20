@@ -1,16 +1,12 @@
 import streamlit as st
 import io
 import requests
-import json
 from PIL import Image
 from PIL import ImageDraw
 
 st.title('顔画像解析アプリ')
 
-with open('secret.json') as f:
-    secret_json = json.load(f)
-
-subscription_key = secret_json[SUBSCRIPTION_KEY]
+subscription_key = '23e10c89452d4b5ca7cf7c1ce7f8b457'
 assert subscription_key
 
 face_api_url = 'https://20210718echigawa.cognitiveservices.azure.com/face/v1.0/detect'
